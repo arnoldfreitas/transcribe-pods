@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: transcribepods
+Version: 0.1
+Summary: Module to download and transcribe podcasts.
+Home-page: 
+Author: Arnold Freitas
+Requires-Dist: selenium
+Requires-Dist: transformers

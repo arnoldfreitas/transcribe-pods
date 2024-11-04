@@ -1,0 +1,8 @@
+setup.py
+transcribepods/__init__.py
+transcribepods/streamfile.py
+transcribepods.egg-info/PKG-INFO
+transcribepods.egg-info/SOURCES.txt
+transcribepods.egg-info/dependency_links.txt
+transcribepods.egg-info/requires.txt
+transcribepods.egg-info/top_level.txt
