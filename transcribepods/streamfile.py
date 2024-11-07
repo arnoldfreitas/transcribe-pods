@@ -27,12 +27,16 @@ class WebNavigator():
     def find_links_by_regex(self, 
             regex='.*\d{1,4}/\d{1,2}/\d{1,2}/xadrez-verbal-podcast-\d{1,3}',
             ):
-        
+        """
+        fronteiras-invisiveis-do-futebol
+        """
         elems = self.driver.find_elements(By.XPATH, "//a[@href]")
         output = []
         for elem in elems:
             tmp = elem.get_attribute("href")
-            if re.match(regex, tmp):
+            if (re.match(regex, tmp)) and \
+                (tmp.endswith(".mp3")):
+                # (not tmp.endswith("#comments")):
                 output.append(tmp)
         
         return list(set(output))
