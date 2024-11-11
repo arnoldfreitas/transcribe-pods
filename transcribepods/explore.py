@@ -1,8 +1,10 @@
 from pprint import pprint
 import json
 import os 
-
+import requests
 from streamfile import WebNavigator
+
+file_path = os.path.abspath(os.path.join(__file__, ".."))
 
 def collect_urls():
     # url = "https://xadrezverbal.com/xadrez-verbal-podcast-2/"
@@ -33,7 +35,7 @@ def collect_urls():
     with open(f'{data_path}/data.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
     
-def download_ep():
+def list_eps_for_download():
     data_path = os.path.dirname(os.path.abspath(__file__))
     with open(f'{data_path}/data.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -54,6 +56,13 @@ def download_ep():
     with open(f'{data_path}/episodes_xadrezverbal.json', 'w', encoding='utf-8') as f:
         json.dump(list(set(out)), f, ensure_ascii=False, indent=4)
 
+def download_ep():
+    ep = "https://api.spreaker.com/download/episode/42461659/fronteiras_20_africa_do_sul.mp3"
+    ep_name = "fronteiras_20_africa_do_sul"
+    response = requests.get(ep)
+    save_to = f"{file_path}/../data/{ep_name}.mp3"
+    print(save_to)
+    open(save_to, "wb").write(response.content)
 
 if __name__=="__main__":
 #    collect_urls()

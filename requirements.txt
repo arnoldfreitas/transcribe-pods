@@ -1,2 +1,8 @@
 selenium
 transformers
+torch
+torchaudio
+tf-keras
+miniaudio
+mutagen
+numpy
