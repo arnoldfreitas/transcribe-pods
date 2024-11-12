@@ -1,8 +1,12 @@
-selenium
-transformers
-torch
-torchaudio
-tf-keras
 miniaudio
 mutagen
+nltk
 numpy
+openai
+python-dotenv
+selenium
+tf-keras
+tiktoken
+torch
+torchaudio
+transformers

@@ -1,5 +1,6 @@
 import json 
 import os
+import tiktoken
 
 data_folder_path = os.path.abspath(os.path.join(__file__, "./../../data"))
 
@@ -14,3 +15,7 @@ def load_from_json(filename):
     with open(f'{data_folder_path}/{filename}.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     return data
+
+def count_tokens(text, model="gpt-4o-mini"):
+    encoding = tiktoken.encoding_for_model(model)
+    return len(encoding.encode(text))
